@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Learning Redux</title>
+  </head>
+  <body>
+    <div ng-app="blog" ng-controller="posts">
+      <ul>
+        <li
+          ng-repeat="post in posts"
+          ng-click="editPost($index, post.text + '!')"
+        >
+          <b>{{post.user}}:</b> {{post.text}}
+        </li>
+      </ul>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

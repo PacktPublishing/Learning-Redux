@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+<ul>
+  <li
+    *ngFor="let post of posts$ | async; let i = index;"
+    (click)="editPost(i, post.text + '!')"
+  >
+    <b>{{post.user}}:</b> {{post.text}}
+  </li>
+</ul>

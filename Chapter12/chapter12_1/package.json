@@ -1,0 +1,11 @@
+{
+  "name": "chapter12_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Daniel Bugl <me@omnidan.net>",
+  "license": "ISC"
+}
