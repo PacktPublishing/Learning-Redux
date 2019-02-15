@@ -1,5 +1,6 @@
 const express = require('express')
 const joinPath = require('path').join
+const dirname = require('path').dirname
 const fs = require('fs')
 
 // adapted from https://github.com/rangle/serve-webpack-client
@@ -46,7 +47,7 @@ module.exports = function createRouter (
         // if file really doesn't exist, show 404
         if (!fs.existsSync(filePath)) return res.status(404).end()
         // otherwise, create the folder
-        const folderPath = filePath.split('/').slice(0, -1).join('/')
+        const folderPath = dirname(filePath)
         devMiddleware.fileSystem.mkdirpSync(folderPath)
         // then create the file
         devMiddleware.fileSystem.writeFileSync(filePath, fs.readFileSync(filePath))
