@@ -44,9 +44,13 @@ const _createPost = (user, post) => thunkCreator({
   .then(response => response.json())
 })
 
-export const createPost = (user, post) => (dispatch) =>
+export const createPost = (user, post, doFetchUser = true) => (dispatch) =>
   _createPost(user, post)(dispatch)
-    .then(result => fetchUser(result.user)(dispatch))
+    .then(result => {
+      if (doFetchUser) {
+        return fetchUser(result.user)(dispatch)
+      }
+    })
     .catch(err =>
       console.error('could not create post:', err.message)
     )

@@ -5,7 +5,7 @@ import CreatePost from '../components/CreatePost.jsx'
 import { createPost } from '../actions'
 
 const mapStateToProps = (state, props) => {
-  return { error: state.error && state.error.message }
+  return { error: state.error && state.error.message, users: state.users }
 }
 
 const mapDispatchToProps = (dispatch, props) =>
