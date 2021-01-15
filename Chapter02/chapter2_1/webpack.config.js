@@ -5,9 +5,14 @@ module.exports = {
     path: path.resolve('dist'),
     filename: 'main.js'
   },
+  devServer: {
+    disableHostCheck: true
+  },
   module: {
-    loaders: [
-      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ }
-    ]
+    rules: [{
+      test: /\.jsx?$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/
+    }]
   }
 }
